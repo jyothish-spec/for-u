@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#ffe3ec" />
+  <title>For The Most Beautiful Girl In My World ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Dancing+Script:wght@500;700&family=Gaegu:wght@400;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="theme-day">
+
+  <!-- Ambient layers -->
+  <div class="sky sky-day" aria-hidden="true"></div>
+  <div class="sky sky-night" aria-hidden="true"></div>
+  <canvas id="fx" aria-hidden="true"></canvas>
+  <div class="bloom" id="bloom" aria-hidden="true"></div>
+
+  <!-- =========================================================
+       PAGE 1 — MAGICAL LANDING
+       ========================================================= -->
+  <section class="page is-active" id="page1" data-screen-label="01 Landing">
+    <div class="stickers" data-set="p1" aria-hidden="true">
+      <!-- MASHA / ROHEE BABY STICKERS:
+           Drop transparent PNG stickers at these paths. They hide automatically if the file is missing. -->
+      <img class="sticker-img" src="assets/stickers/masha-1.png" alt="" style="left:2%;top:62%" />
+      <img class="sticker-img" src="assets/stickers/rohee-1.png" alt="" style="right:2%;top:34%" />
+    </div>
+
+    <div class="wrap">
+      <p class="eyebrow rise" id="eyebrow" style="--dl:0s"><span>✿</span> a little surprise, made with love <span>✿</span></p>
+
+      <h1 class="hero-title split" id="heroTitle">For The Most Beautiful Girl In My World</h1>
+
+      <div class="portrait rise" id="portrait" style="--dl:1.1s">
+        <div class="portrait-glow"></div>
+        <div class="portrait-ring"></div>
+        <div class="orbit" aria-hidden="true">
+          <span style="--a:0deg">✦</span><span style="--a:60deg">♡</span><span style="--a:120deg">✧</span>
+          <span style="--a:180deg">✦</span><span style="--a:240deg">♡</span><span style="--a:300deg">✧</span>
+        </div>
+        <div class="portrait-frame photo" data-label="childhood-photo">
+          <!-- REPLACE CHILDHOOD PHOTO: swap assets/images/childhood-photo.png (square crop works best) -->
+          <img src="assets/images/childhood-photo.png" alt="Her as a little girl" />
+        </div>
+        <span class="portrait-tag">little U ♡</span>
+      </div>
+
+      <h2 class="timer-head reveal">U have been making this world brighter for...</h2>
+      <div class="timer" id="timer">
+        <div class="t-card reveal" style="--i:0"><span class="t-num" data-k="y">00</span><span class="t-label">Years</span></div>
+        <div class="t-card reveal" style="--i:1"><span class="t-num" data-k="m">00</span><span class="t-label">Months</span></div>
+        <div class="t-card reveal" style="--i:2"><span class="t-num" data-k="d">00</span><span class="t-label">Days</span></div>
+        <div class="t-card reveal" style="--i:3"><span class="t-num" data-k="h">00</span><span class="t-label">Hours</span></div>
+        <div class="t-card reveal" style="--i:4"><span class="t-num" data-k="mi">00</span><span class="t-label">Minutes</span></div>
+        <div class="t-card reveal" style="--i:5"><span class="t-num" data-k="s">00</span><span class="t-label">Seconds</span></div>
+      </div>
+
+      <p class="love-note reveal">Among all these countless seconds, my favorite ones are the moments spent with U ❤️</p>
+
+      <button class="heart-btn reveal" id="openHeart" type="button">
+        <svg viewBox="0 0 100 90" aria-hidden="true">
+          <defs>
+            <linearGradient id="hg1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ff7fa6" /><stop offset=".55" stop-color="#e2477a" /><stop offset="1" stop-color="#b8326a" />
+            </linearGradient>
+          </defs>
+          <path fill="url(#hg1)" d="M50 88C20 66 0 48 0 26 0 11 12 0 27 0c10 0 18 5 23 13C55 5 63 0 73 0c15 0 27 11 27 26 0 22-20 40-50 62Z" />
+          <path fill="#fff" opacity=".28" d="M22 10c-8 2-13 9-12 18 3-8 9-13 18-14-2-2-4-4-6-4Z" />
+        </svg>
+        <span class="heart-label">Open My Heart ❤️</span>
+        <span class="bs" style="--a:-20deg">✦</span><span class="bs" style="--a:40deg">✧</span>
+        <span class="bs" style="--a:110deg">✦</span><span class="bs" style="--a:200deg">✧</span>
+        <span class="bs" style="--a:260deg">✦</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 2 — LOVE LETTER CAROUSEL
+       (Letter text lives in script.js → LETTERS)
+       ========================================================= -->
+  <section class="page" id="page2" data-screen-label="02 Love Letters">
+    <div class="stickers" data-set="p2" aria-hidden="true">
+      <!-- MASHA / ROHEE BABY STICKERS -->
+      <img class="sticker-img" src="assets/stickers/masha-2.png" alt="" style="left:2%;top:8%" />
+      <img class="sticker-img" src="assets/stickers/rohee-2.png" alt="" style="right:2%;top:70%" />
+    </div>
+
+    <div class="wrap">
+      <p class="eyebrow rise" style="--dl:.1s">💌 six little envelopes, just for U</p>
+      <h2 class="page-title rise" style="--dl:.25s">Letters From My Heart</h2>
+      <p class="page-sub rise" style="--dl:.4s">swipe, drag, or tap the arrows ✿</p>
+
+      <div class="carousel rise" id="carousel" style="--dl:.5s" aria-roledescription="carousel" aria-label="Love letters">
+        <div class="track" id="track"></div>
+      </div>
+
+      <div class="controls">
+        <button class="nav-btn" id="prevBtn" type="button" aria-label="Previous letter">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
+        </button>
+        <div class="dots" id="dots"></div>
+        <button class="nav-btn" id="nextBtn" type="button" aria-label="Next letter">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+        </button>
+      </div>
+      <p class="count" id="count" aria-live="polite">Letter 1/6</p>
+
+      <!-- Hidden until Letter 6 has been read for 5+ seconds -->
+      <div class="surprise" id="surprise" hidden>
+        <span class="surprise-ring" aria-hidden="true"></span>
+        <button class="heart-btn heart-btn--sm" id="surpriseBtn" type="button">
+          <svg viewBox="0 0 100 90" aria-hidden="true">
+            <defs>
+              <linearGradient id="hg2" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#c49bff" /><stop offset=".5" stop-color="#e2477a" /><stop offset="1" stop-color="#b8326a" />
+              </linearGradient>
+            </defs>
+            <path fill="url(#hg2)" d="M50 88C20 66 0 48 0 26 0 11 12 0 27 0c10 0 18 5 23 13C55 5 63 0 73 0c15 0 27 11 27 26 0 22-20 40-50 62Z" />
+            <path fill="#fff" opacity=".28" d="M22 10c-8 2-13 9-12 18 3-8 9-13 18-14-2-2-4-4-6-4Z" />
+          </svg>
+          <span class="heart-label">One Last Surprise ❤️</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 3 — MUSIC & MEMORIES
+       ========================================================= -->
+  <section class="page" id="page3" data-screen-label="03 Music & Memories">
+    <div class="stickers" data-set="p3" aria-hidden="true">
+      <!-- MASHA / ROHEE BABY STICKERS -->
+      <img class="sticker-img" src="assets/stickers/masha-3.png" alt="" style="left:2%;top:30%" />
+      <img class="sticker-img" src="assets/stickers/rohee-3.png" alt="" style="right:2%;top:55%" />
+    </div>
+
+    <div class="wrap">
+      <p class="eyebrow eyebrow--night rise" style="--dl:.1s">☾ music &amp; memories</p>
+      <h2 class="hero-title split night" id="memTitle">Every Picture Tells A Story, But My Favorite Story Is U</h2>
+
+      <!-- MUSIC PLAYER -->
+      <h3 class="section-title reveal">Every love story deserves a soundtrack ❤️</h3>
+      <p class="page-sub page-sub--night reveal">And this song reminds me of U...</p>
+      <div class="player reveal" id="player">
+        <span class="player-glow" aria-hidden="true"></span>
+        <div class="deck">
+          <div class="vinyl">
+            <div class="vinyl-shine"></div>
+            <div class="vinyl-label"><span>♡</span></div>
+          </div>
+          <div class="arm" aria-hidden="true"></div>
+          <div class="notes" id="notes" aria-hidden="true"></div>
+        </div>
+
+        <div class="p-body">
+          <p class="p-kicker">now playing</p>
+          <!-- Change the song title / subtitle here -->
+          <h3 class="p-title">Azhagiye Marry Me</h3>
+          <p class="p-artist">A.R. Rahman · Kaatru Veliyidai</p>
+
+          <!-- REPLACE MUSIC: put "Azhagiye Marry Me" at assets/music/our-song.mp3 (starts when she taps "One Last Surprise") -->
+          <audio id="song" src="assets/music/our-song.mp3" preload="metadata"></audio>
+
+          <input type="range" id="seek" class="range" min="0" max="100" step="0.1" value="0" aria-label="Song progress" />
+          <div class="times"><span id="cur">0:00</span><span id="dur">0:00</span></div>
+
+          <div class="p-controls">
+            <button class="play" id="playBtn" type="button" aria-label="Play">
+              <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z" /></svg>
+              <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4.5" height="14" rx="1.5" /><rect x="13.5" y="5" width="4.5" height="14" rx="1.5" /></svg>
+            </button>
+            <div class="vol">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" /><path class="wave" d="M15.5 8.5a5 5 0 0 1 0 7M18 6a8.5 8.5 0 0 1 0 12" /></svg>
+              <input type="range" id="vol" class="range" min="0" max="1" step="0.01" value="0.8" aria-label="Volume" />
+            </div>
+          </div>
+          <p class="p-status" id="pStatus" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <!-- GALLERY (photo paths + captions live in script.js → PHOTOS) -->
+      <h3 class="section-title reveal">Our Little Scrapbook</h3>
+      <p class="page-sub page-sub--night reveal">tap any photo to hold it closer</p>
+      <div class="gallery" id="gallery"></div>
+
+      <!-- FINAL LOVE LETTER — REPLACE / EDIT THE TEXT LINES BELOW -->
+      <article class="final" id="finalLetter">
+        <span class="tape tape--final" aria-hidden="true"></span>
+        <p class="final-kicker">and one more letter…</p>
+        <p class="line">Out of all the beautiful things life could have given me, meeting U will always be my favorite blessing.</p>
+        <p class="line gap">Thank U for existing.</p>
+        <p class="line">Thank U for being U.</p>
+        <p class="line gap">I love every version of U.</p>
+        <p class="line">From the little girl smiling in those old photographs to the incredible woman U are today.</p>
+        <p class="line gap">And if I had to choose all over again,</p>
+        <p class="line">I would still choose U.</p>
+        <p class="line big">Every single time. ❤️</p>
+      </article>
+    </div>
+
+    <!-- GRAND FINALE -->
+    <div class="finale" id="finale">
+      <div class="flyers" id="flyers" aria-hidden="true"></div>
+      <h2 class="tbc">To Be Continued... ❤️</h2>
+      <button class="replay" id="replay" type="button">relive it from the start ↺</button>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button class="lb-close" id="lbClose" type="button" aria-label="Close">×</button>
+    <button class="lb-nav lb-prev" id="lbPrev" type="button" aria-label="Previous photo">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
+    </button>
+    <figure class="lb-card" id="lbCard">
+      <div class="lb-photo photo" id="lbPhoto"><img id="lbImg" src="" alt="" /></div>
+      <figcaption class="lb-cap" id="lbCap"></figcaption>
+    </figure>
+    <button class="lb-nav lb-next" id="lbNext" type="button" aria-label="Next photo">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+    </button>
+  </div>
+
+  <template id="__bundler_thumbnail">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#ffe3ec"/><path transform="translate(30 32) scale(.4)" fill="#e2477a" d="M50 88C20 66 0 48 0 26 0 11 12 0 27 0c10 0 18 5 23 13C55 5 63 0 73 0c15 0 27 11 27 26 0 22-20 40-50 62Z"/></svg>
+  </template>
+  <script src="script.js"></script>
+</body>
+</html>
